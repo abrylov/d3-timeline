@@ -118,9 +118,8 @@ var displaySites = function(data) {
   
 };
 
-//var minDateUnix = moment('2019-09-10', "YYYY MM DD").unix();
-var minDateUnix = '1568140000';
-var maxDateUnix = moment('2019-09-12', "YYYY MM DD").unix();
+var minDateUnix = moment('2019-09-10 16:26:00', "YYYY-MM-DD HH:mm:ss").unix();
+var maxDateUnix = moment('2019-09-10 22:33:00', "YYYY-MM-DD HH:mm:ss").unix();
 var minInDay = 60 * 24;
 
 d3.select('#slider3').call(d3.slider()
