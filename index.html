@@ -42,6 +42,8 @@ path {
 <body>
 
 <div id="slider3"></div>
+<div id="count" class="count">Count: </div>
+<div id="time" class="time">Time: </div>
 
 
 <script>
@@ -91,7 +93,6 @@ d3.json(mapPath, function(error, us) {
     })
     .get(function(err, rows) {
     	if (err) return console.error(err);
-      console.log (rows);
       window.site_data = rows;
     });
 });
@@ -125,8 +126,7 @@ var displaySites = function(data) {
 
 var minDateUnix = moment('2019-09-10 06:36:00', "YYYY-MM-DD HH:mm:ss").local().unix();
 var maxDateUnix = moment('2019-09-10 21:35:00', "YYYY-MM-DD HH:mm:ss").local().unix();
-console.log ('min: '+ minDateUnix);
-console.log ('max: '+ maxDateUnix);
+
 var minInDay = 60 * 12;
 
 d3.select('#slider3').call(d3.slider()
@@ -136,9 +136,14 @@ d3.select('#slider3').call(d3.slider()
       return site.created_at < value;
 
     })
-    // console.log("New set size ", newData.length);
 
-    displaySites(newData);
+
+	displaySites(newData);
+	var count = newData.length;
+	console.log (count);
+	var time = moment(value).local().format('YYYY-MMM-DD h:mm A');
+	console.log (time);
+
   })
 );
 
