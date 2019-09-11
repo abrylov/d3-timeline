@@ -86,7 +86,7 @@ d3.json(mapPath, function(error, us) {
       return {
         lat: parseFloat(d.lat),
         lng: parseFloat(d.long),
-        created_at: moment(d.created_at,"YYYY-MM-DD HH:mm:ss").unix()
+        created_at: moment(d.created_at,"YYYY-MM-DD HH:mm:ss").local().unix()
       };
     })
     .get(function(err, rows) {
@@ -123,8 +123,8 @@ var displaySites = function(data) {
   
 };
 
-var minDateUnix = moment('2019-09-10 06:36:00', "YYYY-MM-DD HH:mm:ss").unix();
-var maxDateUnix = moment('2019-09-10 21:35:00', "YYYY-MM-DD HH:mm:ss").unix();
+var minDateUnix = moment('2019-09-10 06:36:00', "YYYY-MM-DD HH:mm:ss").local().unix();
+var maxDateUnix = moment('2019-09-10 21:35:00', "YYYY-MM-DD HH:mm:ss").local().unix();
 console.log ('min: '+ minDateUnix);
 console.log ('max: '+ maxDateUnix);
 var minInDay = 60 * 12;
