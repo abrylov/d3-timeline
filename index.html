@@ -42,8 +42,8 @@ path {
 <body>
 
 <div id="slider3"></div>
-<div id="count" class="count">Count: </div>
-<div id="time" class="time">Time: </div>
+<h1 id="count" class="count"></h1>
+<h1 id="time" class="time"></h1>
 
 
 <script>
@@ -140,9 +140,9 @@ d3.select('#slider3').call(d3.slider()
 
 	displaySites(newData);
 	var count = newData.length;
-	d3.select('#count').data(count).enter().append("p").text(count);
-	var time = moment.utc(value).local().format('YYYY-MMM-DD h:mm A');
-	console.log (time);
+	d3.select('#count').append("h2").html("WO Count: "+ count);
+	var time = moment.utc(value).local().format('YYYY-MM-DD h:mm A');
+	console.log (time + value);
 
   })
 );
