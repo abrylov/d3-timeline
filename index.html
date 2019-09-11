@@ -140,7 +140,7 @@ d3.select('#slider3').call(d3.slider()
 
 	displaySites(newData);
 	var count = newData.length;
-	d3.select(#count).data().enter().text(count);
+	d3.select('#count').data().enter().text(count);
 	var time = moment.utc(value).local().format('YYYY-MMM-DD h:mm A');
 	console.log (time);
 
