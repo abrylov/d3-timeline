@@ -125,10 +125,10 @@ var displaySites = function(data) {
   
 };
 
-//var minDateUnix = moment('2019-09-10 06:36:00', "YYYY-MM-DD HH:mm:ss").local().unix();
-//var maxDateUnix = moment('2019-09-10 21:35:00', "YYYY-MM-DD HH:mm:ss").local().unix();
+var minDateUnix = moment('2019-09-10 06:36:00', "YYYY-MM-DD HH:mm:ss").local().unix();
+var maxDateUnix = moment('2019-09-10 21:35:00', "YYYY-MM-DD HH:mm:ss").local().unix();
 
-//var minInDay = 60 * 12;
+var minInDay = 60 * 12;
 
  d3.select('#slider3').call(d3.slider()
    .axis(true).min(minDateUnix).max(maxDateUnix).step(minInDay)
