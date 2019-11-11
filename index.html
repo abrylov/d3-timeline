@@ -89,7 +89,7 @@ d3.json(mapPath, function(error, us) {
       return {
         lat: parseFloat(d.lat),
         lng: parseFloat(d.long),
-        //created_at: moment(d.created_at,"YYYY-MM-DD HH:mm:ss").local().unix()
+        created_at: moment(d.created_at,"YYYY-MM-DD HH:mm:ss").local().unix()
       };
     })
     .get(function(err, rows) {
