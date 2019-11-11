@@ -130,23 +130,22 @@ var displaySites = function(data) {
 
 //var minInDay = 60 * 12;
 
-// d3.select('#slider3').call(d3.slider()
-//   .axis(true).min(minDateUnix).max(maxDateUnix).step(minInDay)
-//   .on("slide", function(evt, value) {
-//     var newData = _(site_data).filter( function(site) {
-//       return site.created_at < value;
+ d3.select('#slider3').call(d3.slider()
+   .axis(true).min(minDateUnix).max(maxDateUnix).step(minInDay)
+   .on("slide", function(evt, value) {
+     var newData = _(site_data).filter( function(site) {
+       return site.created_at != '';
 
-//     })
+     })
 
-	var newData = _(site_data);
 	displaySites(newData);
-// 	var count = newData.length;
-// 	d3.select('#count').html("WO Count: "+ count);
-// 	var time = moment.unix(value).local().format('YYYY-MM-DD h:mm A');
-// 	d3.select('#time').html("Time: "+ time);
+ 	var count = newData.length;
+ 	d3.select('#count').html("WO Count: "+ count);
+ 	var time = moment.unix(value).local().format('YYYY-MM-DD h:mm A');
+ 	d3.select('#time').html("Time: "+ time);
 
-//  })
-//);
+  })
+);
 
 </script>
 </body>
